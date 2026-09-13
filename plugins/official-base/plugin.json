@@ -1,0 +1,101 @@
+{
+  "id": "org.workstation.base",
+  "name": "基础创作套件",
+  "version": "0.1.0",
+  "sdkVersion": 1,
+  "author": "AI 工作站",
+  "description": "素材管理、基础剪辑与媒体计划。页面可以自由组合、替换或移除。",
+  "category": "创作",
+  "icon": "layers",
+  "pages": [
+    {
+      "id": "media",
+      "name": "素材",
+      "type": "media",
+      "icon": "library",
+      "renderer": "builtin:media",
+      "description": "从硬盘浏览、导入与整理素材，让每个页面共享同一份资产。",
+      "ports": [
+        {
+          "id": "assets",
+          "label": "素材库",
+          "dataType": "workstation.assets@1",
+          "direction": "output"
+        }
+      ],
+      "options": [
+        {
+          "id": "importMode",
+          "label": "默认导入方式",
+          "type": "select",
+          "default": "link",
+          "choices": [
+            { "value": "link", "label": "链接原文件" },
+            { "value": "copy", "label": "复制进项目" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "edit",
+      "name": "剪辑",
+      "type": "timeline",
+      "icon": "scissors",
+      "renderer": "builtin:edit",
+      "description": "以时间线组织片段。媒体预览通过可替换的基础剪辑插件提供。",
+      "ports": [
+        {
+          "id": "subtitles",
+          "label": "字幕轨",
+          "dataType": "workstation.subtitles@1",
+          "direction": "input"
+        },
+        {
+          "id": "assets",
+          "label": "素材库",
+          "dataType": "workstation.assets@1",
+          "direction": "input"
+        },
+        {
+          "id": "timeline",
+          "label": "时间线",
+          "dataType": "workstation.timeline@1",
+          "direction": "output"
+        }
+      ],
+      "options": [
+        {
+          "id": "snap",
+          "label": "片段吸附",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "export",
+      "name": "导出",
+      "type": "export",
+      "icon": "rocket",
+      "renderer": "builtin:export",
+      "description": "检查时间线与媒体能力，生成交给原生媒体工作进程的执行计划。",
+      "ports": [
+        {
+          "id": "subtitles",
+          "label": "字幕轨",
+          "dataType": "workstation.subtitles@1",
+          "direction": "input"
+        },
+        {
+          "id": "timeline",
+          "label": "时间线",
+          "dataType": "workstation.timeline@1",
+          "direction": "input"
+        }
+      ],
+      "options": []
+    }
+  ],
+  "capabilities": ["asset.catalog", "timeline.edit", "media.plan"],
+  "themes": []
+}

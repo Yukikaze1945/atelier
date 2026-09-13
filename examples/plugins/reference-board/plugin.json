@@ -1,0 +1,38 @@
+{
+  "id": "example.reference-board",
+  "name": "参考素材板",
+  "version": "0.1.0",
+  "sdkVersion": 1,
+  "author": "SDK 示例",
+  "description": "演示第三方页面如何直接读取项目素材与公共接口。可替换同类型素材页，CSS 独立于主界面。",
+  "category": "素材",
+  "icon": "grid",
+  "pages": [
+    {
+      "id": "board",
+      "name": "参考素材板",
+      "type": "media",
+      "icon": "grid",
+      "renderer": "index.html",
+      "description": "一个可替换素材页面，使用 Host SDK 读取当前项目。",
+      "ports": [
+        {
+          "id": "assets",
+          "label": "素材库",
+          "dataType": "workstation.assets@1",
+          "direction": "output"
+        }
+      ],
+      "options": [
+        {
+          "id": "heading",
+          "label": "页面标题",
+          "type": "text",
+          "default": "我的参考素材"
+        }
+      ]
+    }
+  ],
+  "capabilities": ["asset.catalog"],
+  "themes": []
+}

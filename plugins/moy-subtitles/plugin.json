@@ -1,0 +1,46 @@
+{
+  "id": "org.workstation.moy-subtitles",
+  "name": "Moy 字幕工作流（工作站适配）",
+  "version": "0.1.0",
+  "sdkVersion": 1,
+  "author": "Moyf / AI 工作站适配",
+  "description": "基于 MAW 原始编辑器界面的工作站字幕插件，提供素材预览、字幕编辑和字幕轨输出。",
+  "category": "字幕",
+  "icon": "subtitles",
+  "repository": "https://github.com/Moyf/moys-asr-workflow",
+  "pages": [
+    {
+      "id": "subtitles",
+      "name": "字幕",
+      "type": "subtitles",
+      "icon": "subtitles",
+      "renderer": "index.html",
+      "description": "SRT / MAW 工程导入、校对与输出",
+      "ports": [
+        {
+          "id": "assets",
+          "label": "素材库",
+          "direction": "input",
+          "dataType": "workstation.assets@1"
+        },
+        {
+          "id": "timeline",
+          "label": "时间线",
+          "direction": "input",
+          "dataType": "workstation.timeline@1"
+        },
+        {
+          "id": "subtitles",
+          "label": "字幕轨",
+          "direction": "output",
+          "dataType": "workstation.subtitles@1"
+        }
+      ],
+      "options": []
+    }
+  ],
+  "capabilities": [
+    "subtitle.edit"
+  ],
+  "themes": []
+}
