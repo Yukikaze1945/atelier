@@ -89,7 +89,7 @@ npm run probe:media
 
 能力检测调用实际媒体工作进程，报告 GES、编码预设和已发现的工厂。`gpuZeroCopy.validated=false` 特指完整 GES 合成链仍待验证；源视频桥接的实际验证由 `tests/e2e/gpu.spec.ts` 完成。
 
-GStreamer 为官方校验过的 1.28.6 开发运行库，可用 `WORKSTATION_GSTREAMER_ROOT` 指定其他兼容安装。`WORKSTATION_MEDIA_WORKER` 可指定替代执行器。运行库中部分编码插件具有 GPL 许可，依赖二进制不纳入源码目录分发；最终打包配置与项目许可证仍需另行确定。
+GStreamer 为官方校验过的 1.28.6 开发运行库，可用 `WORKSTATION_GSTREAMER_ROOT` 指定其他兼容安装。`WORKSTATION_MEDIA_WORKER` 可指定替代执行器。运行库中部分编码插件具有 GPL 许可，依赖二进制不纳入源码目录分发；最终打包时的第三方依赖许可证合规方案仍需另行确定。
 
 ## 代码组织
 
